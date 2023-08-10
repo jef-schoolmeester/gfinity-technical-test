@@ -1,5 +1,14 @@
 # gfinity-technical-test
 
+## Thinking process
+
+### Setup
+I first created a nuxt application using yarn.
+I then created a github repo and linked the local project to the repository.
+Since I didn't know Vue before starting the project, I played a bit with the files to get a feel on how things work.
+
+### Data fetching
+
 ## Build Setup
 
 ```bash
