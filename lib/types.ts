@@ -1,4 +1,3 @@
-type SingleStatistic = { average: number }
 export type Statistic = { average: number } & Record<string, number>
 
 export interface Statistics {
@@ -15,14 +14,7 @@ export interface FifaCard {
     rating: number
     position: string
     cardType: string
-    statistics: {
-        passing: SingleStatistic
-        physical: SingleStatistic
-        dribbling: SingleStatistic
-        defense: SingleStatistic
-        pace: SingleStatistic
-        shooting: SingleStatistic
-    }
+    statistics: Statistics
     workRatesAttacking: string
     workRatesDefensive: string
     slug: { current: string }
