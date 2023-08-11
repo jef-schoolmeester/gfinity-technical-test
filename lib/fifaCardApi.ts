@@ -3,7 +3,21 @@ import { client } from './config'
 import { DetailedFifaCard, FifaCards } from './types'
 
 export const fetchFifaCards = async () => {
-    const players = await client.fetch<FifaCards>('*[_type == "fifaCard"]')
+    const players = await client.fetch<FifaCards>(
+        /* groq */`
+            *[_type == "fifaCard"]
+            {
+                name,
+                slug,
+                rating,
+                position,
+                cardType,
+                statistics,
+                workRatesAttacking,
+                workRatesDefensive,
+            }
+        `
+    )
     return players
 }
 
