@@ -1,23 +1,18 @@
 <template>
-  <main>
-    <div v-for="card in fifaCards" :key="card.name">
-      <NuxtLink :to="'card/' + card.slug.current">
-        {{ card.name }}
-      </NuxtLink>
-    </div>
-    <CounterTest />
-  </main>
+  <div class="bg-black w-full min-h-full lg:max-w-5xl overflow-x-auto">
+    <CardListComponent :fifa-cards="fifaCards" />
+  </div>
 </template>
 
 <script lang="ts">
 import { fetchFifaCards } from '../lib/fifaCardApi'
 
-import CounterTest from '../components/Counter.vue'
+import CardListComponent from '@/components/CardList/List.vue'
 
 export default {
   name: 'IndexPage',
   components: {
-    CounterTest
+    CardListComponent
   },
   async asyncData() {
     const fifaCards = await fetchFifaCards()
