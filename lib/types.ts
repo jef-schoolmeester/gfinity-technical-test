@@ -1,5 +1,14 @@
-type Statistic = { average: number }
-type Statistics = { average: number } & Record<string, number>
+type SingleStatistic = { average: number }
+export type Statistic = { average: number } & Record<string, number>
+
+export interface Statistics {
+    passing: Statistic
+    physical: Statistic
+    dribbling: Statistic
+    defense: Statistic
+    pace: Statistic
+    shooting: Statistic
+}
 
 export interface FifaCard {
     name: string
@@ -7,12 +16,12 @@ export interface FifaCard {
     position: string
     cardType: string
     statistics: {
-        passing: Statistic
-        physical: Statistic
-        dribbling: Statistic
-        defense: Statistic
-        pace: Statistic
-        shooting: Statistic
+        passing: SingleStatistic
+        physical: SingleStatistic
+        dribbling: SingleStatistic
+        defense: SingleStatistic
+        pace: SingleStatistic
+        shooting: SingleStatistic
     }
     workRatesAttacking: string
     workRatesDefensive: string
@@ -22,12 +31,18 @@ export interface FifaCard {
 export type FifaCards = Array<FifaCard>
 
 export interface DetailedFifaCard extends FifaCard {
-    statistics: {
-        passing: Statistics
-        physical: Statistics
-        dribbling: Statistics
-        defense: Statistics
-        pace: Statistics
-        shooting: Statistics
+    club: string
+    league: string
+    nation: string
+    strongFoot: string
+    age: string
+    height: string
+    statistics: Statistics
+    cardImage: {
+        _type: string,
+         asset: {
+            _ref: string,
+            _type: string
+        }
     }
 }
