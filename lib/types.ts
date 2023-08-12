@@ -1,5 +1,7 @@
 export type Statistic = { average: number } & Record<string, number>
 
+export type StatisticKey = 'passing' | 'physical' | 'dribbling' | 'defense' | 'pace' | 'shooting'
+
 export interface Statistics {
     passing: Statistic
     physical: Statistic

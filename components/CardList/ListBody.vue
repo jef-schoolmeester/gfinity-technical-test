@@ -1,7 +1,12 @@
 <template>
     <tbody>
-        <tr v-for="fifaCard in fifaCards" :key="fifaCard.slug.current" class="bg-zinc-900 border-b border-zinc-700 last:border-b-0">
-            <td class="flex justify-center">{{fifaCard.name}}</td>
+        <tr
+            v-for="fifaCard in fifaCards"
+            :key="fifaCard.slug.current"
+            class="bg-zinc-900 border-b border-zinc-700 last:border-b-0 hover:bg-zinc-800 transition-colors"
+            @click="goToCard(fifaCard.slug.current)"
+        >
+            <td class="w-full h-full flex justify-center items-center font-semibold uppercase">{{fifaCard.name}}</td>
             <td><DataBox :value="fifaCard.rating.toString()" :invert-colors="true" /></td>
             <td><DataBox :value="fifaCard.position" /></td>
             <td><DataBox :value="fifaCard.cardType" :is-large="true" /></td>
@@ -28,7 +33,14 @@ export default {
     props: {
         fifaCards: {
             required: true,
-            type: Object as () => FifaCards
+            type: Array as () => FifaCards
+        }
+    },
+    methods: {
+        goToCard(slug: string) {
+            this.$router.push({
+                path: `/card/${slug}`
+            })
         }
     }
 }
