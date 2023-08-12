@@ -1,6 +1,8 @@
 <template>
-  <div class="bg-black w-full min-h-full lg:max-w-5xl overflow-x-auto">
-    <CardListComponent :fifa-cards="fifaCards" />
+  <div class="bg-black w-full min-h-full pb-14 lg:pb-0 lg:max-w-5xl">
+    <div class="overflow-x-auto pb-14">
+      <CardListComponent :fifa-cards="fifaCards" />
+    </div>
   </div>
 </template>
 
