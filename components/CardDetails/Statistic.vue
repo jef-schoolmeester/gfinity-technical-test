@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-col w-24 mt-6 mr-2">
-        <div class="flex justify-between pt-1 pb-1 border-t-2 border-b-2 border-white">
+        <div id="statisticLabel" class="flex justify-between pt-1 pb-1 border-t-2 border-b-2 border-white">
             <p class="m-0">{{ name }}</p>
             <p class="m-0">{{ average }}</p>
         </div>
-        <div v-for="attribute in stats" :key="attribute[0]" class="mt-6 flex justify-between text-xs">
+        <div v-for="attribute in stats" id="statisticItem" :key="attribute[0]" class="mt-6 flex justify-between text-xs">
             <p class="m-0 capitalize">{{ attribute[0] }}</p>
             <p class="m-0">{{ attribute[1] }}</p>
         </div>

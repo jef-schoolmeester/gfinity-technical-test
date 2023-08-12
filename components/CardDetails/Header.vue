@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex items-end mt-10">
-        <h1 class="text-3xl mr-4 max-w-fit">{{ cardName }}</h1>
+        <h1 id="headerText" class="text-3xl mr-4 max-w-fit">{{ cardName }}</h1>
         <NuxtLink to="/" class="border-dotted border-b-2 border-zinc-600 text-zinc-600">
             View all cards
         </NuxtLink>
