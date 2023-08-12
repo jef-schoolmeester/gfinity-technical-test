@@ -1,15 +1,16 @@
 import { FifaCard, FifaCards, StatisticKey } from "./types"
 
 export const parseContentTitle = (title: string) => {
-    return title.replace(/([A-Z])/g, ' $1')
+    return title.replace(/([A-Z])/g, ' $1').trimEnd()
 }
 
 export const compareTwoValues = (valueA: any, valueB: any, comparisonType: 'asc' | 'desc') => {
+    if (typeof valueA !== typeof valueB) throw new TypeError('Cannot compare different types')
     let comparisonValue: number
     if (valueA < valueB) comparisonValue = -1
     else if (valueA > valueB) comparisonValue = 1
     else comparisonValue = 0
-    if (comparisonType === 'desc') comparisonValue *= -1
+    if (comparisonType === 'desc' && comparisonValue !== 0) comparisonValue *= -1
     return comparisonValue
 }
 
