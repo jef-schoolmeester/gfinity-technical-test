@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex flex-col items-center bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-2xl p-2 py-4 lg:flex-row lg:pb-10">
+    <div class="w-full flex flex-col items-center bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-2xl p-2 py-4 lg:flex-row lg:pb-10 lg:mt-10">
         <img :src="imageUrl" />
         <div class="w-full flex flex-wrap justify-evenly">
             <StatisticComponent :name="'PAC'" :statistic="statistics.pace" />

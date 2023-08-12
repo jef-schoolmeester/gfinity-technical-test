@@ -3,7 +3,7 @@
         class="font-normal px-1 py-3"
         @click="$emit('toggle-sort', property)"
     >
-        <div :class="`w-full h-full flex justify-center items-center ${hideBorder ? '' : 'border-r border-zinc-600'}`">
+        <div :class="`w-full h-full flex items-center ${hideBorder ? '' : 'border-r border-zinc-600'} ${alignLeft ? 'justify-start' : 'justify-center'}`">
             <p class="mr-1">{{ name }}</p>
             <div class="flex flex-col">
                 <img src="/up-arrow.svg" :class="`transition-opacity ${isSortedDesc ? 'opacity-0' : ''}`" />
@@ -29,6 +29,11 @@ export default {
             type: Array as unknown as () => [string, 'asc' | 'desc']
         },
         hideBorder: {
+            required: false,
+            type: Boolean as () => boolean,
+            default: false
+        },
+        alignLeft: {
             required: false,
             type: Boolean as () => boolean,
             default: false

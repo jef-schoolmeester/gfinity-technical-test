@@ -11,7 +11,7 @@
             <FilterSelector name="DRI" property="statistics.dribbling" :current-sort="currentSort" @toggle-sort="$emit('toggle-sort', $event)" />
             <FilterSelector name="DEF" property="statistics.defense" :current-sort="currentSort" @toggle-sort="$emit('toggle-sort', $event)" />
             <FilterSelector name="PHY" property="statistics.physical" :current-sort="currentSort" @toggle-sort="$emit('toggle-sort', $event)" />
-            <FilterSelector name="WR" property="custom.workRates" class="w-40 text-left" :current-sort="currentSort" :hide-border="true" @toggle-sort="$emit('toggle-sort', $event)" />
+            <FilterSelector name="WR" property="custom.workRates" class="w-40" :align-left="true" :current-sort="currentSort" :hide-border="true" @toggle-sort="$emit('toggle-sort', $event)" />
         </tr>
     </thead>
 </template>
