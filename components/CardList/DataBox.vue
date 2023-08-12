@@ -6,6 +6,7 @@
         `"
     >
         <div
+            id="roundedBox"
             :class="`
                 h-8 rounded-md bg-black flex justify-center items-center
                 ${hasBorders ? 'border-2 border-white' : ''}
