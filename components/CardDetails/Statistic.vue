@@ -4,8 +4,8 @@
             <p class="m-0">{{ name }}</p>
             <p class="m-0">{{ average }}</p>
         </div>
-        <div v-for="attribute in Object.entries(stats)" :key="attribute[0]" class="mt-6 flex justify-between text-xs">
-            <p class="m-0">{{ attribute[0] }}</p>
+        <div v-for="attribute in stats" :key="attribute[0]" class="mt-6 flex justify-between text-xs">
+            <p class="m-0 capitalize">{{ attribute[0] }}</p>
             <p class="m-0">{{ attribute[1] }}</p>
         </div>
     </div>
@@ -13,6 +13,8 @@
   
 <script lang="ts">
 import { Statistic } from '../../lib/types'
+
+import { parseContentTitle } from '~/lib/content'
 
 export default {
     name: 'StatisticComponent',
@@ -30,7 +32,7 @@ export default {
         const { average, ...rest } = instance.statistic
         return {
             average,
-            stats: rest
+            stats: Object.entries(rest).map((stat) => [parseContentTitle(stat[0]), stat[1]])
         }
     }
 }
